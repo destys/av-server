@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_services",
+  "info": {
+    "singularName": "main-service",
+    "pluralName": "main-services",
+    "displayName": "Service 1 (main)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta-fields"
+    }
+  }
+}

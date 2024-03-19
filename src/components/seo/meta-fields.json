@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_seo_meta_fields",
+  "info": {
+    "displayName": "Meta fields",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "seo_title": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "text"
+    }
+  }
+}
