@@ -4,7 +4,8 @@
   "info": {
     "singularName": "sub-service",
     "pluralName": "sub-services",
-    "displayName": "Service 3 (sub)"
+    "displayName": "Service 3 (sub)",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,18 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta-fields"
+    },
+    "service_2_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type-service.type-service",
+      "inversedBy": "service_3_subs"
+    },
+    "price": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::price.price",
+      "inversedBy": "service_3_sub"
     }
   }
 }

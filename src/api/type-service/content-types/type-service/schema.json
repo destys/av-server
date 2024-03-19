@@ -4,7 +4,8 @@
   "info": {
     "singularName": "type-service",
     "pluralName": "type-services",
-    "displayName": "Service 2 (type)"
+    "displayName": "Service 2 (type)",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,18 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta-fields"
+    },
+    "service_1_main": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::main-service.main-service",
+      "inversedBy": "service_2_types"
+    },
+    "service_3_subs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-service.sub-service",
+      "mappedBy": "service_2_type"
     }
   }
 }

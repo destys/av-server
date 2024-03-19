@@ -4,7 +4,8 @@
   "info": {
     "singularName": "main-service",
     "pluralName": "main-services",
-    "displayName": "Service 1 (main)"
+    "displayName": "Service 1 (main)",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,12 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta-fields"
+    },
+    "service_2_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::type-service.type-service",
+      "mappedBy": "service_1_main"
     }
   }
 }

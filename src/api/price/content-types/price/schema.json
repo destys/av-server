@@ -18,6 +18,12 @@
       "type": "component",
       "repeatable": false,
       "component": "seo.meta-fields"
+    },
+    "service_3_sub": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-service.sub-service",
+      "mappedBy": "price"
     }
   }
 }

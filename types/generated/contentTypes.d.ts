@@ -794,6 +794,7 @@ export interface ApiCarBrandCarBrand extends Schema.CollectionType {
     singularName: 'car-brand';
     pluralName: 'car-brands';
     displayName: 'Car (brand)';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -801,6 +802,11 @@ export interface ApiCarBrandCarBrand extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     SEO: Attribute.Component<'seo.meta-fields'>;
+    car_models: Attribute.Relation<
+      'api::car-brand.car-brand',
+      'oneToMany',
+      'api::car-model.car-model'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -832,6 +838,11 @@ export interface ApiCarModelCarModel extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     SEO: Attribute.Component<'seo.meta-fields'>;
+    car_brand: Attribute.Relation<
+      'api::car-model.car-model',
+      'manyToOne',
+      'api::car-brand.car-brand'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -878,6 +889,7 @@ export interface ApiMainServiceMainService extends Schema.CollectionType {
     singularName: 'main-service';
     pluralName: 'main-services';
     displayName: 'Service 1 (main)';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -885,6 +897,11 @@ export interface ApiMainServiceMainService extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     SEO: Attribute.Component<'seo.meta-fields'>;
+    service_2_types: Attribute.Relation<
+      'api::main-service.main-service',
+      'oneToMany',
+      'api::type-service.type-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -947,6 +964,11 @@ export interface ApiPricePrice extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     SEO: Attribute.Component<'seo.meta-fields'>;
+    service_3_sub: Attribute.Relation<
+      'api::price.price',
+      'oneToOne',
+      'api::sub-service.sub-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -971,6 +993,7 @@ export interface ApiSubServiceSubService extends Schema.CollectionType {
     singularName: 'sub-service';
     pluralName: 'sub-services';
     displayName: 'Service 3 (sub)';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -978,6 +1001,16 @@ export interface ApiSubServiceSubService extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     SEO: Attribute.Component<'seo.meta-fields'>;
+    service_2_type: Attribute.Relation<
+      'api::sub-service.sub-service',
+      'manyToOne',
+      'api::type-service.type-service'
+    >;
+    price: Attribute.Relation<
+      'api::sub-service.sub-service',
+      'oneToOne',
+      'api::price.price'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1002,6 +1035,7 @@ export interface ApiTypeServiceTypeService extends Schema.CollectionType {
     singularName: 'type-service';
     pluralName: 'type-services';
     displayName: 'Service 2 (type)';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1009,6 +1043,16 @@ export interface ApiTypeServiceTypeService extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     SEO: Attribute.Component<'seo.meta-fields'>;
+    service_1_main: Attribute.Relation<
+      'api::type-service.type-service',
+      'manyToOne',
+      'api::main-service.main-service'
+    >;
+    service_3_subs: Attribute.Relation<
+      'api::type-service.type-service',
+      'oneToMany',
+      'api::sub-service.sub-service'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
