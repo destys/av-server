@@ -4,7 +4,7 @@
   "info": {
     "singularName": "sub-service",
     "pluralName": "sub-services",
-    "displayName": "Service 3 (sub)",
+    "displayName": "Услуга 3 (подуслуга)",
     "description": ""
   },
   "options": {
@@ -20,17 +20,33 @@
       "repeatable": false,
       "component": "seo.meta-fields"
     },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "service_2_type": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::type-service.type-service",
-      "inversedBy": "service_3_subs"
+      "inversedBy": "usluga_3_poduslugases"
     },
     "price": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::price.price",
-      "inversedBy": "service_3_sub"
+      "inversedBy": "usluga_3_podusluga"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site-blocks.intro"
     }
   }
 }

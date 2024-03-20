@@ -4,7 +4,7 @@
   "info": {
     "singularName": "type-service",
     "pluralName": "type-services",
-    "displayName": "Service 2 (type)",
+    "displayName": "Услуга 2 (тип)",
     "description": ""
   },
   "options": {
@@ -26,11 +26,27 @@
       "target": "api::main-service.main-service",
       "inversedBy": "service_2_types"
     },
-    "service_3_subs": {
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "usluga_3_poduslugases": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::sub-service.sub-service",
       "mappedBy": "service_2_type"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site-blocks.intro"
     }
   }
 }

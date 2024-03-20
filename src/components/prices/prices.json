@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_prices_prices",
+  "info": {
+    "displayName": "Prices",
+    "icon": "shoppingCart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    }
+  }
+}

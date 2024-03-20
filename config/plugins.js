@@ -5,4 +5,7 @@ module.exports = () => ({
             // See `Config` section.
         },
     },
+    "vercel-deploy": {
+        enabled: true,
+    },
 });

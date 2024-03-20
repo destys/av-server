@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_site_blocks_intros",
+  "info": {
+    "displayName": "Intro",
+    "icon": "arrowUp"
+  },
+  "options": {},
+  "attributes": {
+    "h1": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

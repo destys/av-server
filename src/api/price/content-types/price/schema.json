@@ -4,7 +4,8 @@
   "info": {
     "singularName": "price",
     "pluralName": "prices",
-    "displayName": "Price"
+    "displayName": "Цены",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,11 +20,21 @@
       "repeatable": false,
       "component": "seo.meta-fields"
     },
-    "service_3_sub": {
+    "usluga_3_podusluga": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::sub-service.sub-service",
       "mappedBy": "price"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site-blocks.intro"
+    },
+    "prices": {
+      "type": "component",
+      "repeatable": true,
+      "component": "prices.prices"
     }
   }
 }

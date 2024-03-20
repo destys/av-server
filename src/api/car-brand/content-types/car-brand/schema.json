@@ -4,7 +4,7 @@
   "info": {
     "singularName": "car-brand",
     "pluralName": "car-brands",
-    "displayName": "Car (brand)",
+    "displayName": "Автомобиль (бренд)",
     "description": ""
   },
   "options": {
@@ -25,6 +25,11 @@
       "relation": "oneToMany",
       "target": "api::car-model.car-model",
       "mappedBy": "car_brand"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site-blocks.intro"
     }
   }
 }

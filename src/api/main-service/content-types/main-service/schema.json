@@ -4,7 +4,7 @@
   "info": {
     "singularName": "main-service",
     "pluralName": "main-services",
-    "displayName": "Service 1 (main)",
+    "displayName": "Услуга 1 (основная)",
     "description": ""
   },
   "options": {
@@ -25,6 +25,22 @@
       "relation": "oneToMany",
       "target": "api::type-service.type-service",
       "mappedBy": "service_1_main"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site-blocks.intro"
     }
   }
 }

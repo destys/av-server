@@ -4,7 +4,8 @@
   "info": {
     "singularName": "car-model",
     "pluralName": "car-models",
-    "displayName": "Car (model)"
+    "displayName": "Автомобиль (модель)",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,11 @@
       "relation": "manyToOne",
       "target": "api::car-brand.car-brand",
       "inversedBy": "car_models"
+    },
+    "intro": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site-blocks.intro"
     }
   }
 }
